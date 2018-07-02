@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Create User</title>
 </head>
 <body>
     <form id="user-create-form" action="./api/user" method="post">
-        
-        <!-- Add user input fields here -->
-
-        <button type="submit">Create User</button>
+      Please Enter Valid Email Address:<br>
+      <input type="email" name="email"><br>
+      Please Re-Enter Email Address:<br>
+      <input type="email" name="email"><br>
+      Please Enter a Password (Atleast 8 characters)<br>
+      <input type="password" name="password"><br>
+      Please Confirm Password<br>
+      <input type="password" name="password"><br>
+      Please Enter a Username<br>
+      <input type="text" name="username"><br>
+      Please Enter Birthday Month and Year (xx/xxxx)<br>
+      <input type="number" name="birthMonth" value="08"> 
+      <input type="number" name="birthYear" value="1991"><br>
+      <button type="submit">Create User</button>
     </form>
+    <script src="index.js"></script>
 </body>
 </html>
