@@ -6,6 +6,13 @@ const userPasswordInputs = document.getElementsByName('password');
 const userUserName = document.getElementsByName('username');
 const userBirthMonth = document.getElementsByName('birthMonth');
 const userBirthYear = document.getElementsByName('birthYear');
+const phoneNumber = document.getElementById('phone');
+const socialAccount = document.getElementById('social');
+const contactPreference = document.getElementsByName('communication');
+const devices = document.getElementsByName('devices');
+const loginRights = document.getElementById('loginrights');
+const favColor = document.getElementById('favcolor');
+const pokemon = document.getElementById('pokemon');
 
 userCreateSubmitButton.addEventListener( "click" , handleUserSubmit );
 
@@ -51,6 +58,30 @@ function handleUserSubmit( event ){
   if( userBirthMonth[0].value && userBirthYear[0].value ){
     userInfo.birthday = userBirthMonth[0].value + userBirthYear[0].value;
   }
+
+  userInfo.phoneNum = phoneNumber.value;
+  userInfo.social = socialAccount.value;
+  
+  if( contactPreference[0].checked ){
+    userInfo.contactPref = contactPreference[0].value;
+  }else{
+    userInfo.contactPref = contactPreference[1].value;
+  }
+
+  let deviceList = []
+  devices.forEach( device => {
+    if ( device.checked ){
+      deviceList.push(device.value);
+    }
+  })
+
+  userInfo.devices = deviceList;
+
+  userInfo.login = loginRights.value;
+
+  userInfo.color = favColor.value;
+
+  userInfo.pokemon = pokemon.value;
 
   userInfoJson = JSON.stringify(userInfo);
 

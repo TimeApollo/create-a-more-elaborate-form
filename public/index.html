@@ -1,29 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Create User</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Create User</title>
 </head>
+
 <body>
-    <form id="user-create-form" action="./api/user" method="post">
-      Please Enter Valid Email Address:<br>
-      <input type="email" name="email"><br>
-      Please Re-Enter Email Address:<br>
-      <input type="email" name="email"><br>
-      Please Enter a Password (Atleast 8 characters)<br>
-      <input type="password" name="password"><br>
-      Please Confirm Password<br>
-      <input type="password" name="password"><br>
-      Please Enter a Username<br>
-      <input type="text" name="username"><br>
-      Please Enter Birthday Month and Year (xx/xxxx)<br>
-      <input type="number" name="birthMonth" value="08"> 
-      <input type="number" name="birthYear" value="1991"><br>
-      <button type="submit">Create User</button>
-    </form>
-    <script src="index.js"></script>
+  <form id="user-create-form" action="./api/user" method="post">
+    <fieldset>
+      <legend>Account Registration Details</legend>
+      <label for="email">Enter Valid Email Address:</label>
+      <br>
+      <input type="email" name="email" id="email" autofocus>
+      <br> Please Re-Enter Email Address:
+      <br>
+      <input type="email" name="email">
+      <br> Please Enter a Password (Atleast 8 characters)
+      <br>
+      <input type="password" name="password">
+      <br> Please Confirm Password
+      <br>
+      <input type="password" name="password">
+      <br> Please Enter a Username
+      <br>
+      <input type="text" name="username">
+      <br> Please Enter Birthday Month and Year (xx/xxxx)
+      <br>
+      <input type="number" name="birthMonth" value="08">
+      <input type="number" name="birthYear" value="1991">
+      <br>
+    </fieldset>
+    <fieldset>
+      <legend>Contact Information</legend>
+    <label for="phone">Please enter your phone number (xxxxxxxxxx)</label>
+    <br>
+    <input type="tel" name="mobileNumber" id="phone">
+    <br>
+    <label for="social">Link your favorite social media account</label>
+    <br>
+    <input type="url" name="social" id="social">
+    <br>
+    <label>Select preferred contact method</label>
+    <br>
+    <label for="phone">
+      <input type="radio" name="communication" id="phoneNum" value="phone"> Phone
+    </label>
+    <label for="email">
+      <input type="radio" name="communication" id="eml" value="email"> Email
+    </label>
+    <br>
+  </fieldset>
+    <fieldset>
+      <legend>Devices Used (Check all that apply)</legend>
+
+      <label for="iOS">
+        <input type="checkbox" name="devices" id="iOS" value="iOS"> iOS
+      </label>
+      <label for="android">
+        <input type="checkbox" name="devices" id="android" value="android"> Android
+      </label>
+      <label for="mac">
+        <input type="checkbox" name="devices" id="mac" value="mac"> Mac
+      </label>
+      <label for="windows">
+        <input type="checkbox" name="devices" id="windows" value="windows"> Windows
+      </label>
+
+    </fieldset>
+    <fieldset>
+      <legend>Additional Information</legend>
+      <select id="loginrights">
+        <option value="admin">Admin</option>
+        <option value="maint">Maintenance</option>
+        <option value="Supervisor">Supervisor</option>
+        <option value="User">User</option>
+        <option value="none" selected>--Please Select User Rights</option>
+      </select><br><br>
+      <label for="favcolor">
+          <input type="color" name="favcolor" value="#008000" id="favcolor"> Favorite Color
+      </label>
+      <br>
+      <br>
+      <label for="pokemon">
+        The Best Pokemon is 
+        <input type="text" id="pokemon" value="ButterFree" disabled>
+      </label>
+      
+    </fieldset>
+
+
+    <button type="submit">Create User</button>
+    <button type="reset">Reset Entries</button>
+  </form>
+  <script src="index.js"></script>
 </body>
+
 </html>
